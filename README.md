@@ -4,7 +4,7 @@ Voici un exemple d'un très beau fichier README pour votre projet GitHub :
 
 # Discord Manager Extension (D-M-E) 🎮💻
 
-![LICENSE](./LICENSE)
+![License](https://img.shields.io/github/license/ErrorNoName/D-M-E)
 ![Version](https://img.shields.io/github/package-json/v/ErrorNoName/D-M-E)
 ![Issues](https://img.shields.io/github/issues/ErrorNoName/D-M-E)
 
