@@ -1,7 +1,3 @@
-Voici un exemple d'un très beau fichier README pour votre projet GitHub :
-
----
-
 # Discord Manager Extension (D-M-E) 🎮💻
 
 ![License](https://img.shields.io/github/license/ErrorNoName/D-M-E)
@@ -81,7 +77,3 @@ Les contributions sont les bienvenues ! Veuillez suivre ces étapes :
 ## 📜 Licence
 
 Ce projet est sous licence MIT. Consultez le fichier [LICENSE](./LICENSE) pour plus d'informations.
-
----
-
-Ajoutez ce fichier dans le dépôt pour rendre votre projet encore plus professionnel et accueillant pour les développeurs ! 🎉
