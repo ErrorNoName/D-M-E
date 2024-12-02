@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Discord Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Intégration de Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Barre de Titre Personnalisée -->
+  <div class="custom-title-bar">
+    <div class="title">
+      <h1>Discord Manager</h1>
+    </div>
+    <div class="window-controls">
+      <button id="minimize-btn" title="Minimiser"><i class="fas fa-window-minimize"></i></button>
+      <button id="maximize-btn" title="Maximiser"><i class="fas fa-window-maximize"></i></button>
+      <button id="close-btn" title="Fermer"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
+  <!-- Menu Latéral Gauche -->
+  <aside class="sidebar">
+    <nav class="menu">
+      <ul>
+        <li>
+          <button class="menu-btn active" data-section="verify">
+            <i class="fas fa-check-circle"></i>
+            <span class="tooltip">Vérifier Tokens</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-btn" data-section="manage">
+            <i class="fas fa-users"></i>
+            <span class="tooltip">Gérer Comptes</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-btn" data-section="actions">
+            <i class="fas fa-bolt"></i>
+            <span class="tooltip">Actions</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-btn" data-section="logs">
+            <i class="fas fa-terminal"></i>
+            <span class="tooltip">Logs</span>
+          </button>
+        </li>
+        <!-- Ajoutez d'autres sections si nécessaire -->
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Section Principale -->
+  <main class="main-content">
+    <!-- Barre de Menu Supérieure des Onglets -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="verify">Vérifier Tokens</button>
+      <button class="tab-btn" data-tab="manage">Gérer Comptes</button>
+      <button class="tab-btn" data-tab="actions">Actions</button>
+      <button class="tab-btn" data-tab="logs">Logs</button>
+      <!-- Ajoutez d'autres onglets si nécessaire -->
+    </div>
+
+    <!-- Contenu des Onglets -->
+    <div class="tab-content active" id="verify">
+      <section class="section verify-section">
+        <h2>Ou Entrer les Tokens Manuellement</h2>
+        <textarea id="manualTokens" placeholder="✏️ Collez vos tokens ici, un par ligne"></textarea>
+        <button id="verifyTokensBtn">✅ Vérifier les Tokens</button>
+        <button id="loadTokensBtn">📂 Charger les Tokens depuis un Fichier</button> <!-- Bouton ajouté -->
+        <span id="verifiedTokenCount">Tokens valides : 0</span>
+      </section>
+    </div>
+
+    <div class="tab-content" id="manage">
+      <section class="section accounts-section">
+        <h2>Comptes Vérifiés</h2>
+        <div class="accounts-controls">
+          <button id="selectAllBtn">✅ Sélectionner Tout</button>
+          <button id="deselectAllBtn">❌ Désélectionner Tout</button>
+        </div>
+        <div id="accountsList" class="accounts-list">
+          <!-- Les comptes vérifiés seront listés ici avec des cases à cocher -->
+        </div>
+        <button id="initializeBtn">🔄 Initialiser les Comptes</button>
+      </section>
+    </div>
+
+    <div class="tab-content" id="actions">
+      <section class="section actions-section">
+        <h2>Actions</h2>
+
+        <div class="action-group">
+          <h3>Rejoindre un Serveur</h3>
+          <input type="text" id="inviteLink" placeholder="🔗 Lien d'invitation du serveur">
+          <button id="joinServerBtn">🚀 Rejoindre</button>
+        </div>
+
+        <div class="action-group">
+          <h3>Envoyer des Messages Privés</h3>
+          <input type="text" id="userId" placeholder="🆔 ID de l'utilisateur">
+          <input type="text" id="pmMessage" placeholder="💬 Message à envoyer">
+          <button id="sendPMBtn">✉️ Envoyer</button>
+        </div>
+
+        <div class="action-group">
+          <h3>Messages Serveur</h3>
+          <input type="text" id="messageServerId" placeholder="🆔 ID du serveur">
+          <input type="text" id="messageChannelId" placeholder="🆔 ID du salon">
+          <input type="text" id="serverMessage" placeholder="💬 Message à poster">
+          <button id="sendServerMsgBtn">📤 Envoyer</button>
+        </div>
+
+        <!-- Nouvelle Action : Envoyer une Demande d'Amitié -->
+        <div class="action-group">
+          <h3>Envoyer une Demande d'Amitié</h3>
+          <input type="text" id="friendUserId" placeholder="🆔 ID de l'utilisateur">
+          <button id="sendFriendRequestBtn">🤝 Envoyer Demande</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="tab-content" id="logs">
+      <section class="section logs-section">
+        <h2>Console</h2>
+        <textarea id="console" readonly></textarea>
+      </section>
+    </div>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
